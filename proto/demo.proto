@@ -4,22 +4,22 @@ package demo;
 
 option go_package = "simple-gprc/";
 
-message HelloRequest {
+message ClassRegistrationRequest {
     string name = 1;
 }
 
-message HelloResponse {
+message ClassRegistrationResponse {
     string greeting = 1;
 }
 
-message RestaurantLikeStatRequest {
-    repeated int32 resIds = 1;
+message ClassRegistrationStatRequest {
+    repeated int32 classIds = 1;
 }
 
-message RestaurantLikeStatResponse {
+message ClassRegistrationStatResponse {
     map<int32, int32> result = 1;
 }
 
-service HelloService {
-    rpc GetRestaurantLikeStat(RestaurantLikeStatRequest) returns (RestaurantLikeStatResponse) {};
+service ClassRegistrationService {
+    rpc GetClassRegistrationStat(ClassRegistrationStatRequest) returns (ClassRegistrationStatResponse) {};
 }
