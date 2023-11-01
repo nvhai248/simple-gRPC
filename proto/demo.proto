@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package demo;
+
+option go_package = "simple-gprc/";
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloResponse {
+    string greeting = 1;
+}
+
+message RestaurantLikeStatRequest {
+    repeated int32 resIds = 1;
+}
+
+message RestaurantLikeStatResponse {
+    map<int32, int32> result = 1;
+}
+
+service HelloService {
+    rpc GetRestaurantLikeStat(RestaurantLikeStatRequest) returns (RestaurantLikeStatResponse) {};
+}
